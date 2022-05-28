@@ -48,5 +48,6 @@ function overlap(x::VotePreference, y::VotePreference)
 end
 
 include("kronecker.jl")
+include("fpp.jl")
 
 end
