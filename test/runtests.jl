@@ -67,6 +67,10 @@ end
 	@test isempty(filter(x -> x <= 0, outcome))
 
 	@test allunique(outcome)
+
+    degenerate_counts = fill(1, num_offices, num_candidates)
+	outcome = Vector{Int}(undef, num_offices)
+    @test_throws ErrorException determinewinner!(outcome, degenerate_counts)
 end
 
 #@testset "election" begin
