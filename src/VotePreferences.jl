@@ -22,15 +22,15 @@ function VotePreference(prefvecs::Array)
     # initialize prefstate
     prefstate = prefvecs[:,1]
     # iteratively generate full prefstate
-    for i in 2:size(prefvecs)[2]
+    for i in 2:size(prefvecs, 2)
         prefstate = prefstate ⊗ prefvecs[:,i]
     end
 
-    num_candidates = size(prefvecs)[1]
+    num_candidates = size(prefvecs, 1)
     return VotePreference(prefvecs, prefstate, num_candidates)
 end
 function VotePreference(;prefstate=0)
-    num_candidates = size(prefstate)[1]
+    num_candidates = size(prefstate, 1)
     return VotePreference(nothing, prefstate, num_candidates)
 end
     """ 
