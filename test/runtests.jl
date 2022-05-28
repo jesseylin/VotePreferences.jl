@@ -71,6 +71,22 @@ end
 	@test allunique(outcome)
 end
 
+@testset "election sanity checks" begin
+	voters = Vector{VotePreference}(undef, num_voters)
+	for i in 1:num_voters
+		prefvecs = [rand() for i in 1:num_candidates, j in 1:num_offices]
+		voters[i] = VotePreference(prefvecs)
+	end
+
+    outcome = election(voters)
+
+	@test typeof(outcome) <: Vector{<:Integer}
+	@test only(size(outcome)) == num_offices
+	@test isempty(filter(x -> x > num_candidates, outcome))
+	@test isempty(filter(x -> x <= 0, outcome))
+
+	@test allunique(outcome)
+end
 #@testset "election" begin
 #    election = Election(parameterdict)
 #    @test typeof(election) == Election

@@ -35,7 +35,7 @@ function determinewinner!(outcome, counts)
 end
 
 function election(voters::Vector{VotePreference})
-	num_offices = length(voters[1].prefvecs)
+	num_offices = size(voters[1].prefvecs, 2)
 	num_voters = length(voters)
 	
 	votes = Array{Int}(undef, num_offices, num_voters)
