@@ -1,8 +1,10 @@
 using VotePreferences
-using LinearAlgebra
+using LinearAlgebra, Random
 using Test
 
 include("../src/fpp.jl")
+
+Random.seed!(29347619235)
 
 a = [1 2;
      3 4]
