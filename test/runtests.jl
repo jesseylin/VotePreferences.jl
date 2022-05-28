@@ -26,13 +26,9 @@ end
 
 # tests for electoral system
 @testset "castballot! sanity checks" begin
-	voters = Vector{VotePreference}(undef, num_voters)
-	for i in 1:num_voters
-		prefvecs = [rand() for i in 1:num_candidates, j in 1:num_offices]
-		voters[i] = VotePreference(prefvecs)
-	end
+    prefvecs = [rand() for i in 1:num_candidates, j in 1:num_offices]
+    voter = VotePreference(prefvecs)
 
-	voter = voters[1]
 	vote = castballot(voter)
 
 	@test typeof(vote) <: Vector{<:Integer}
