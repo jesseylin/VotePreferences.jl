@@ -19,6 +19,9 @@ function determinewinner!(outcome, counts)
 		winner = argmax(tally)
 		while winner in outcome
 			deleteat!(tally, winner)
+            if isempty(tally)
+                throw(ErrorException("Insufficient candidates to fill the rest of the offices."))
+            end
 			winner = argmax(tally)
 		end
 		
