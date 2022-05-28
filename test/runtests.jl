@@ -1,5 +1,8 @@
-using VotePreferences, LinearAlgebra
+using VotePreferences
+using LinearAlgebra
 using Test
+
+include("../src/fpp.jl")
 
 a = [1 2;
      3 4]

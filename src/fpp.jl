@@ -1,3 +1,5 @@
+using VotePreferences
+
 function castballot(voter::VotePreference)
 	return vec([index[1] for index in argmax(voter.prefvecs; dims=1)])
 end
