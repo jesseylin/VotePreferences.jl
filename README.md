@@ -6,4 +6,4 @@ This project was inspired by the following problem, which comes from the electio
 
 Consider an election where you have $N_o$ offices and $N_c$ candidates for these offices, and a voting population of $M$. For each office $o_i,$ voters vote for any *subset* of the candidates $\{c_i\},$ for which order matters (i.e., election theory over combinatorial domains). Moreover, the election process includes an ordering of the offices $\{o_i\}$ such that if a candidate $c_i$ is already elected to an office $i,$ they are immediately eliminated from any other elections $j$ with $j > i$ in the ordering (e.g., the president-elect is eliminated from the vice presidential election).
 
-What is a voting system that attains an electoral outcome which is "ideal" in some sense while also being simple enough to implement using e.g., Google Forms?
+What is a voting system that attains an electoral outcome which is "ideal" in some sense while also being simple enough to implement using e.g., Google Forms? How does this depend on the various "hyperparameters" $\{N_o, N_c, M\}$ as well as other properties of the candidates running for each office?
